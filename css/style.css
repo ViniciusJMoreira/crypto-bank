@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
+* {
+  font-family: "Nunito Sans", sans-serif;
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 18px;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #0C1E42;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+button {
+  border: none;
+  background: none;
+}
+
+.header {
+  margin-block: 1rem;
+  text-align: center;
+}
+.header .text-balance i {
+  padding-left: 0.2rem;
+}
+.header :where(.text-balance, .cipher-balance, .currency-balance, .summary-value) {
+  color: #c9c9c9;
+}
+.header .balance {
+  padding-block: 0.6rem 0.3rem;
+  font-size: 1.5rem;
+}
+.header .summary-value {
+  font-size: 0.75rem;
+}
+.header .nav-portfolio-icons {
+  margin-top: 1.5rem;
+}
+.header .nav-portfolio-icons span {
+  display: block;
+  font-size: 0.75rem;
+  padding-top: 0.2rem;
+}
+.header .nav-portfolio-icons {
+  display: flex;
+  justify-content: space-around;
+}
+.header .nav-portfolio-icons button {
+  background-color: #1C82e2;
+  color: #fff;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 1rem;
+}
+
+main {
+  height: 60vh;
+  padding-inline: 0.7rem;
+}
+
+.section-movements {
+  margin-block: 1rem;
+  padding: 0.6rem 0.7rem;
+  border-radius: 0.2rem;
+  display: flex;
+  justify-content: space-between;
+  background-color: #1b2f56;
+  text-transform: capitalize;
+}
+.section-movements .right {
+  text-align: end;
+}
+.section-movements :where(.movements-description, .movements-date) {
+  font-size: 0.75rem;
+  color: #c9c9c9;
+}
+.section-movements .withdraw {
+  color: #ff0000;
+}
+.section-movements .deposit {
+  color: #01cc01;
+}
+
+/*# sourceMappingURL=style.css.map */
