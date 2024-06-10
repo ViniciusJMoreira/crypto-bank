@@ -15,9 +15,6 @@ body {
   min-height: 100vh;
   background-color : #0C1E42;
   color: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
 }
 
 button {
@@ -27,8 +24,8 @@ button {
 
 // HEADER 
 
-.header {
-  margin-block: 1rem;
+header {
+  margin-block: 3rem 2rem;
   text-align: center;
   // border: 1px solid #fff;
 
@@ -41,7 +38,7 @@ button {
   }
 
   & .balance {
-    padding-block: .6rem .3rem;
+    padding-block: .6rem .4rem;
     font-size: 1.7rem;
   }
 
@@ -74,16 +71,24 @@ button {
   }
 }
 
-
-
 // MAIN
 
 main {
-  height: 60vh;
+  // height: 60vh;
   // border: 1px solid;
   padding-inline: .7rem;
+  margin-block: 2rem;
 }
-.section-movements {
+
+// .section-crypto-currencies {
+//   border: 1px solid #fff;
+// }
+
+// .section-movements {
+//   border: 1px solid #fff;
+// }
+
+.container-movements {
   margin-block: 1rem;
   padding: .6rem .7rem;
   // border: 1px solid;
@@ -101,12 +106,12 @@ main {
     font-size: .75rem;
     color: #c9c9c9;
   }
+}
+  
+.withdraw {
+  color: #ff0000;
+}
 
-  & .withdraw {
-    color: #ff0000;
-  }
-
-  & .deposit {
-    color: #01cc01;
-  }
+.deposit {
+  color: #01cc01;
 }

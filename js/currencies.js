@@ -1,17 +1,17 @@
-export const Currencies = {
-  UnitedStates: {
+export const currencies = {
+  dollar: {
     localeCode: "en-US",
     currency: "USD",
   },
-  Euro: {
+  euro: {
     localeCode: "it-IT",
     currency: "EUR",
   },
-  UnitedKingdom: {
+  pound: {
     localeCode: "en-GB",
     currency: "GBP",
   },
-  Brazil: {
+  real: {
     localeCode: "pt-BR",
     currency: "BRL",
   },
