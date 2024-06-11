@@ -1,4 +1,4 @@
-import { currencies } from "./currencies.js";
+import { convertCurrency, convertCurrencyStyle } from "./convertCurrency.js";
 
 // questao pra resolver
 let currentCurrency = "euro";
@@ -8,13 +8,6 @@ const labelBalance = document.querySelector('.current-balance');
 const labelSumIn = document.querySelector(".summary-value-in");
 const labelSumOut = document.querySelector(".summary-value-out");
 
-function convertCurrencyStyle (movement) {
-  return movement.toLocaleString(`${currencies[currentCurrency].localeCode}`, {style: 'currency', currency: `${currencies[currentCurrency].currency}`});
-}
-function convertCurrency (movement) {
-  return movement.toLocaleString(`${currencies[currentCurrency].localeCode}`, {minimumFractionDigits: 2,maximumFractionDigits: 2});
-}
-
 function displayBalance(account) {
   const totalBalance = account.wallet[currentCurrency].reduce((acc,mov) => acc+=mov,0);
   labelBalance.textContent = convertCurrency(totalBalance);
@@ -23,11 +16,12 @@ function displayBalance(account) {
 function displayMovements(account) {
   sectionMovements.innerHTML = "";
   account.wallet[currentCurrency].forEach((mov) => {
-    const type = mov > 0 ? "deposit" : "withdraw";
+    const type = mov > 0 ? "increase" : "decrease";
+    const movement = mov > 0 ? 'Deposit' : 'Withdraw'
     const html = `
         <div class="container-movements">
           <div>
-            <p class="movements-type">${type}</p>
+            <p class="movements-type">${movement}</p>
             <p class="movements-description">Description</p>
           </div>
           <div class="right">

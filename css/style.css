@@ -9,7 +9,7 @@
 }
 
 html {
-  font-size: 18px;
+  font-size: 16px;
 }
 
 body {
@@ -66,7 +66,7 @@ main {
   margin-block: 2rem;
 }
 
-.container-movements {
+.container-movements, .container-crypto-currencies {
   margin-block: 1rem;
   padding: 0.6rem 0.7rem;
   border-radius: 0.2rem;
@@ -75,19 +75,23 @@ main {
   background-color: #1b2f56;
   text-transform: capitalize;
 }
-.container-movements .right {
+.container-movements .right, .container-crypto-currencies .right {
   text-align: end;
 }
-.container-movements :where(.movements-description, .movements-date) {
+.container-movements :where(.movements-description, .movements-date, .crypto-ticker, .crypto-percentage), .container-crypto-currencies :where(.movements-description, .movements-date, .crypto-ticker, .crypto-percentage) {
   font-size: 0.75rem;
   color: #c9c9c9;
 }
 
-.withdraw {
-  color: #ff0000;
+:where(.crypto-price, .crypto-percentage) {
+  transition: color 1s ease-in-out;
 }
 
-.deposit {
+.decrease {
+  color: #ff3838;
+}
+
+.increase {
   color: #01cc01;
 }
 
