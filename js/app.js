@@ -12,15 +12,15 @@ await displayCryptoCurrencies(currentCryptoData);
 
 //
 function fadeIncrease(element) {
-  element.classList.toggle("increase");
+  element.classList.add("increase");
   setTimeout(() => {
-    element.classList.toggle("increase");
+    element.classList.remove("increase");
   }, 2000);
 }
 function fadeDecrease(element) {
-  element.classList.toggle("decrease");
+  element.classList.add("decrease");
   setTimeout(() => {
-    element.classList.toggle("decrease");
+    element.classList.remove("decrease");
   }, 2000);
 }
 async function updateCryptoPrice() {
