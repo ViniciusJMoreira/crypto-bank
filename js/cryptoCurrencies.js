@@ -9,7 +9,7 @@ const sectionCryptoCurrencies = document.querySelector('.section-crypto-currenci
 async function fetchCryptoCurrencies() {
   try {
     const data = await fetch(
-      `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC,ETH,XRP,MANA,ADA,AVAX&tsyms=USD,EUR&api_key={${API_KEY}}`
+      `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=MATIC,CRO,MATIC,AVAX,ADA,MANA,XRP,ETH,BTC&tsyms=USD,EUR&api_key={${API_KEY}}`
     ).then(res => res.json());
     return data.RAW;
   } catch (err) {
@@ -50,7 +50,7 @@ async function dataCryptoCurrencies() {
 async function displayCryptoCurrencies(dataCrypto) {
   sectionCryptoCurrencies.innerHTML = "";
   Object.entries(dataCrypto).forEach((coin) => {
-    const type = coin[1].percent > 0 ? "increase" : "decrease";
+    const type = coin[1].percentage > 0 ? "increase" : "decrease";
     const html = `
         <div class="container-crypto-currencies">
           <div>
