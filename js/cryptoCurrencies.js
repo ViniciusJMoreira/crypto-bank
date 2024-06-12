@@ -29,14 +29,12 @@ async function fetchCryptoCurrencies() {
 }
 
 async function dataCryptoCurrencies() {
-  const allCryptoNames = await fetchCryptoNames();
   const cryptoCurrencies = Object.entries(await fetchCryptoCurrencies());
   const dataCrypto = cryptoCurrencies.reduce((acc,coin) => {
-    const name = allCryptoNames[coin[0]].FullName.split(' ')[0];
     const price = coin[1][currencies[currentCurrency].currency].PRICE;
     const open24Hour = coin[1][currencies[currentCurrency].currency].OPEN24HOUR;
     const percentage = Math.round((((price - open24Hour) / open24Hour) * 100) * 100) / 100;
-    acc[coin[0]] = { price, name, percentage };
+    acc[coin[0]] = { price, percentage };
     return acc;
   },{});
   // console.log(dataCrypto);
@@ -48,7 +46,6 @@ async function dataCryptoNames(currentCryptoData) {
   const dataCrypto = Object.entries(currentCryptoData).map((coin) => {
     const name = allCryptoNames[coin[0]].FullName.split(" ")[0];
     const imageUrl = allCryptoNames[coin[0]].ImageUrl;
-    console.log(imageUrl);
     return [name, imageUrl];
   });
   return dataCrypto;
@@ -82,6 +79,7 @@ async function updateCryptoData() {
       elPercentage.classList.remove("increase");
       elPercentage.classList.add("decrease");
     }
+    elPercentage.textContent = `${el[1].percentage}%`;
     currentCryptoData[el[0]].percentage = el[1].percentage;
   });
 }
@@ -112,21 +110,22 @@ async function displayCryptoCurrencies() {
         </div>
     `;
     sectionCryptoCurrencies.insertAdjacentHTML("afterbegin", html);
-  });
-  setInterval(updateCryptoData, 1000 * 20);
+    });
+  setTimeout(() => (sectionCryptoCurrencies.style.opacity = 1), 100);
+  setInterval(updateCryptoData, 1000 * 10);
 }
 
 function fadeIncrease(element, price) {
   element.classList.add("increase");
+  element.textContent = convertCurrencyStyle(price);
   setTimeout(() => {
-    element.textContent = convertCurrencyStyle(price);
     element.classList.remove("increase");
   }, 2000);
 }
 function fadeDecrease(element, price) {
   element.classList.add("decrease");
+  element.textContent = convertCurrencyStyle(price);
   setTimeout(() => {
-    element.textContent = convertCurrencyStyle(price);
     element.classList.remove("decrease");
   }, 2000);
 }

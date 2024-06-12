@@ -66,6 +66,18 @@ main {
   margin-block: 2rem;
 }
 
+.section-crypto-currencies {
+  display: block;
+  opacity: 0;
+  transition: all 0.7s ease-in;
+}
+
+.section-movements {
+  display: none;
+  opacity: 0;
+  transition: all 0.7s ease-in;
+}
+
 .container-movements, .container-crypto-currencies {
   margin-block: 1rem;
   padding: 0.6rem 0.7rem;

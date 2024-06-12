@@ -79,13 +79,17 @@ main {
   margin-block: 2rem;
 }
 
-// .section-crypto-currencies {
-//   border: 1px solid #fff;
-// }
+.section-crypto-currencies {
+  display: block;
+  opacity: 0;
+  transition: all .7s ease-in;
+}
 
-// .section-movements {
-//   border: 1px solid #fff;
-// }
+.section-movements {
+  display: none;
+  opacity: 0;
+  transition: all .7s ease-in;
+}
 
 .container-movements, .container-crypto-currencies {
   margin-block: 1rem;
