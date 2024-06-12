@@ -93,7 +93,9 @@ async function displayCryptoCurrencies() {
     const html = `
         <div class="container-crypto-currencies">
           <div class="flex">
-            <img class="crypto-image" src="https://www.cryptocompare.com/${allCryptoNames[i][1]}" alt="">
+            <img class="crypto-image" src="https://www.cryptocompare.com/${
+              allCryptoNames[i][1]
+            }" alt="">
             <div>
               <p class="crypto-name">${allCryptoNames[i][0]}</p>
               <p class="crypto-ticker">${coin[0]}</p>
@@ -103,7 +105,7 @@ async function displayCryptoCurrencies() {
             <p class="crypto-price crypto-price-${coin[0].toLowerCase()}">${convertCurrencyStyle(
       coin[1].price
     )}</p>
-            <p class="crypto-percentage crypto-percentage-${coin[0].toLowerCase()} ${type}">${
+            <p class="crypto-percentage crypto-percentage-${coin[0].toLowerCase()} ${type} text-end">${
       coin[1].percentage
     }%</p>
           </div>

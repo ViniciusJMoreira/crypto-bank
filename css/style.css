@@ -62,23 +62,45 @@ header .nav-portfolio-icons button {
 }
 
 main {
-  padding-inline: 0.7rem;
+  padding-inline: 1rem;
   margin-block: 2rem;
-}
-
-.section-crypto-currencies {
-  display: block;
-  opacity: 0;
-  transition: all 0.7s ease-in;
 }
 
 .section-movements {
   display: none;
-  opacity: 0;
-  transition: all 0.7s ease-in;
 }
 
-.container-movements, .container-crypto-currencies {
+.col-movements {
+  border-radius: 0.3rem;
+  padding: 0.6rem 0.7rem;
+  background-color: #1b2f56;
+}
+
+.container-movements {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.2s ease-in;
+  background-color: #1b2f56;
+  border-bottom-left-radius: 0.3rem;
+  border-bottom-right-radius: 0.3rem;
+}
+
+.movements-row {
+  padding: 0.6rem 0.7rem;
+  display: flex;
+  justify-content: space-between;
+  text-transform: capitalize;
+}
+
+:where(.movements-description, .movements-date, .crypto-ticker, .crypto-percentage) {
+  font-size: 0.75rem;
+  color: #c9c9c9;
+}
+
+.container-crypto-currencies {
+  display: block;
+  opacity: 1;
+  transition: all 0.7s ease-in;
   margin-block: 1rem;
   padding: 0.6rem 0.7rem;
   border-radius: 0.2rem;
@@ -87,14 +109,6 @@ main {
   background-color: #1b2f56;
   text-transform: capitalize;
 }
-.container-movements .right, .container-crypto-currencies .right {
-  text-align: end;
-}
-.container-movements :where(.movements-description, .movements-date, .crypto-ticker, .crypto-percentage), .container-crypto-currencies :where(.movements-description, .movements-date, .crypto-ticker, .crypto-percentage) {
-  font-size: 0.75rem;
-  color: #c9c9c9;
-}
-
 .container-crypto-currencies :where(.crypto-price, .crypto-percentage) {
   transition: color 1s ease-in-out;
 }
@@ -114,6 +128,14 @@ main {
 
 .flex {
   display: flex;
+}
+
+.text-end {
+  text-align: end;
+}
+
+hr {
+  opacity: 0.1;
 }
 
 /*# sourceMappingURL=style.css.map */

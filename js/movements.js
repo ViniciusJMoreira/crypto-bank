@@ -1,7 +1,7 @@
 import { convertCurrency, convertCurrencyStyle } from "./convertCurrency.js";
 import { currentCurrency } from "./currentCurrency.js";
 import { accounts } from "./accounts.js";
-const sectionMovements = document.querySelector('.section-movements');
+const sectionMovements = document.querySelector(".container-movements");
 const labelBalance = document.querySelector('.current-balance');
 const labelSumIn = document.querySelector(".summary-value-in");
 const labelSumOut = document.querySelector(".summary-value-out");
@@ -30,13 +30,14 @@ function displayMovements(account) {
     const type = mov > 0 ? "increase" : "decrease";
     const movement = mov > 0 ? 'Deposit' : 'Withdraw'
     const html = `
-        <div class="container-movements">
+        <hr>
+        <div class="movements-row">
           <div>
             <p class="movements-type">${movement}</p>
             <p class="movements-description">Description</p>
           </div>
-          <div class="right">
-          <p class="movements-value ${type}">${convertCurrencyStyle(mov)}</p>
+          <div class="text-end">
+            <p class="movements-value ${type}">${convertCurrencyStyle(mov)}</p>
             <p class="movements-date">1 May</p>
           </div>
         </div>
