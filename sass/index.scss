@@ -108,12 +108,22 @@ main {
 
 }
 
-:where(.crypto-price, .crypto-percentage) {
-  transition: color 1s ease-in-out;
-}
+.container-crypto-currencies {
+  & :where(.crypto-price, .crypto-percentage) {
+    transition: color 1s ease-in-out;
+    // border:1px solid;
+  }
 
-:where(.crypto-name, .crypto-price) {
-// font-size: 16px;
+  & :where(.crypto-name, .crypto-price) {
+  // font-size: 16px;
+    // border:1px solid;
+  }
+
+  & .crypto-image {
+    width: 30px;
+    height: 30px;
+    margin-right: .25rem;
+  }
 }
   
 .decrease {
@@ -122,4 +132,8 @@ main {
 
 .increase {
   color: #01cc01;
+}
+
+.flex {
+  display: flex;
 }

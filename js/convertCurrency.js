@@ -1,6 +1,5 @@
 import { currencies } from "./currencies.js";
-// questao pra resolver
-let currentCurrency = "euro";
+import { currentCurrency } from "./currentCurrency.js";
 
 function convertCurrencyStyle(movement) {
   return movement.toLocaleString(`${currencies[currentCurrency].localeCode}`, {

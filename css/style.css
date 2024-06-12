@@ -83,8 +83,13 @@ main {
   color: #c9c9c9;
 }
 
-:where(.crypto-price, .crypto-percentage) {
+.container-crypto-currencies :where(.crypto-price, .crypto-percentage) {
   transition: color 1s ease-in-out;
+}
+.container-crypto-currencies .crypto-image {
+  width: 30px;
+  height: 30px;
+  margin-right: 0.25rem;
 }
 
 .decrease {
@@ -93,6 +98,10 @@ main {
 
 .increase {
   color: #01cc01;
+}
+
+.flex {
+  display: flex;
 }
 
 /*# sourceMappingURL=style.css.map */

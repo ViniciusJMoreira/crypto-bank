@@ -1,7 +1,5 @@
 import { convertCurrency, convertCurrencyStyle } from "./convertCurrency.js";
-
-// questao pra resolver
-let currentCurrency = "euro";
+import { currentCurrency } from "./currentCurrency.js";
 
 const sectionMovements = document.querySelector('.section-movements');
 const labelBalance = document.querySelector('.current-balance');
