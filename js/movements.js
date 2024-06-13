@@ -1,31 +1,14 @@
 import { convertCurrency, convertCurrencyStyle } from "./convertCurrency.js";
 import { currentCurrency } from "./currentCurrency.js";
 import { accounts } from "./accounts.js";
-const sectionMovements = document.querySelector(".container-movements");
-const labelBalance = document.querySelector('.current-balance');
-const labelSumIn = document.querySelector(".summary-value-in");
-const labelSumOut = document.querySelector(".summary-value-out");
 
-function displayBalance(account) {
-  const totalBalance = account.wallet[currentCurrency].reduce((acc,mov) => acc+=mov,0);
-  labelBalance.textContent = convertCurrency(totalBalance);
-}
-
-function calcDisplaySummary(account) {
-  const incomes = account.wallet[currentCurrency].reduce((acc, mov) => {
-    if (mov > 0) return (acc += mov);
-    return acc;
-  }, 0);
-  const outcomes = account.wallet[currentCurrency].reduce((acc, mov) => {
-    if (mov < 0) return (acc += mov);
-    return acc;
-  }, 0);
-  labelSumIn.textContent = convertCurrency(incomes);
-  labelSumOut.textContent = convertCurrency(outcomes);
-}
+const sectionMovements = document.querySelector(".section-movements");
+const containerMovements = document.querySelector(".container-movements");
+const sectionCryptoCurrencies = document.querySelector('.section-crypto-currencies');
+let isBoolean = false;
 
 function displayMovements(account) {
-  sectionMovements.innerHTML = "";
+  containerMovements.innerHTML = "";
   account.wallet[currentCurrency].forEach((mov) => {
     const type = mov > 0 ? "increase" : "decrease";
     const movement = mov > 0 ? 'Deposit' : 'Withdraw'
@@ -42,14 +25,28 @@ function displayMovements(account) {
           </div>
         </div>
     `;
-    sectionMovements.insertAdjacentHTML("afterbegin", html);
+    containerMovements.insertAdjacentHTML("afterbegin", html);
   });
 }
 
-function displayWallet() {
-  displayMovements(accounts[0]);
-  displayBalance(accounts[0]);
-  calcDisplaySummary(accounts[0]);
+function displaySectionMovements() {
+  sectionCryptoCurrencies.style.display = "none";
+  sectionMovements.style.display = "block";
 }
 
-export { displayWallet };
+function displayWalletMovements() {
+  isBoolean = !isBoolean;accounts;
+  if(isBoolean) {
+    // arrumar a questao dessa funcao(lugar errado)
+    displayMovements(accounts[0]);
+    containerMovements.style.display = "block";
+    document.querySelector('.col-movements i').className = "bi bi-caret-down-fill"
+    setTimeout(() => (containerMovements.style.opacity = 1), 50); 
+  }else {
+    containerMovements.style.display = "none";
+    document.querySelector(".col-movements i").className ="bi bi-caret-right-fill";
+    setTimeout(() => (containerMovements.style.opacity = 0), 50); 
+  }
+}
+
+export { displayWalletMovements, displaySectionMovements };

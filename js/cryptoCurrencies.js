@@ -5,6 +5,7 @@ import { currentCurrency } from "./currentCurrency.js";
 let currentCryptoData = {};
 const API_KEY = "19718a9ed4d37246d63a91247ad10cebf2209c712f7d279a08b679612d895b8a";
 const sectionCryptoCurrencies = document.querySelector('.section-crypto-currencies');
+const sectionMovements = document.querySelector(".section-movements");
 
 async function fetchCryptoNames() {
   try {
@@ -88,6 +89,9 @@ async function displayCryptoCurrencies() {
   currentCryptoData = await dataCryptoCurrencies();
   const allCryptoNames = await dataCryptoNames(currentCryptoData);
   sectionCryptoCurrencies.innerHTML = "";
+  // da sistemare
+  sectionMovements.style.display = "none";
+  sectionCryptoCurrencies.style.display = "block";
   Object.entries(currentCryptoData).forEach((coin,i) => {
     const type = coin[1].percentage > 0 ? "increase" : "decrease";
     const html = `
@@ -122,14 +126,14 @@ function fadeIncrease(element, price) {
   element.textContent = convertCurrencyStyle(price);
   setTimeout(() => {
     element.classList.remove("increase");
-  }, 2000);
+  }, 1000);
 }
 function fadeDecrease(element, price) {
   element.classList.add("decrease");
   element.textContent = convertCurrencyStyle(price);
   setTimeout(() => {
     element.classList.remove("decrease");
-  }, 2000);
+  }, 1000);
 }
 
 export { displayCryptoCurrencies };

@@ -58,7 +58,7 @@ header .nav-portfolio-icons button {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 main {
@@ -136,6 +136,10 @@ main {
 
 hr {
   opacity: 0.1;
+}
+
+.noselect {
+  user-select: none;
 }
 
 /*# sourceMappingURL=style.css.map */
