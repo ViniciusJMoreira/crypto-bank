@@ -1,15 +1,12 @@
 import { convertCurrency, convertCurrencyStyle } from "./convertCurrency.js";
 import { currentCurrency } from "./currentCurrency.js";
-import { accounts } from "./accounts.js";
-
-const sectionMovements = document.querySelector(".section-movements");
+import { wallet } from "./wallet.js";
 const containerMovements = document.querySelector(".container-movements");
-const sectionCryptoCurrencies = document.querySelector('.section-crypto-currencies');
 let isBoolean = false;
 
-function displayMovements(account) {
+function displayMovements() {
   containerMovements.innerHTML = "";
-  account.wallet[currentCurrency].forEach((mov) => {
+  wallet[currentCurrency].movements.forEach((mov) => {
     const type = mov > 0 ? "increase" : "decrease";
     const movement = mov > 0 ? 'Deposit' : 'Withdraw'
     const html = `
@@ -30,15 +27,10 @@ function displayMovements(account) {
 }
 
 function displaySectionMovements() {
-  sectionCryptoCurrencies.style.display = "none";
-  sectionMovements.style.display = "block";
-}
-
-function displayWalletMovements() {
-  isBoolean = !isBoolean;accounts;
+  isBoolean = !isBoolean;
   if(isBoolean) {
     // arrumar a questao dessa funcao(lugar errado)
-    displayMovements(accounts[0]);
+    displayMovements();
     containerMovements.style.display = "block";
     document.querySelector('.col-movements i').className = "bi bi-caret-down-fill"
     setTimeout(() => (containerMovements.style.opacity = 1), 50); 
@@ -49,4 +41,4 @@ function displayWalletMovements() {
   }
 }
 
-export { displayWalletMovements, displaySectionMovements };
+export { displaySectionMovements };
