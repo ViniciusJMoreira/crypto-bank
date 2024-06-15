@@ -41,11 +41,13 @@ async function dataCryptoCurrencies() {
   return dataCrypto;
 }
 
-async function dataCryptoNames(currentCryptoData) {
+async function dataCryptoNames() {
   const allCryptoNames = await fetchCryptoNames();
   const dataCrypto = Object.entries(currentCryptoData).map((coin) => {
     const name = allCryptoNames[coin[0]].FullName.split(" ")[0];
     const imageUrl = allCryptoNames[coin[0]].ImageUrl;
+    currentCryptoData[coin[0]].image = imageUrl;
+    currentCryptoData[coin[0]].name = name;
     return [name, imageUrl];
   });
   return dataCrypto;
@@ -84,35 +86,29 @@ async function updateCryptoData() {
   });
 }
 
-async function displayCryptoCurrencies(e) {
+async function displayCryptoCurrencies() {
   currentCryptoData = await dataCryptoCurrencies();
-  const allCryptoNames = await dataCryptoNames(currentCryptoData);
+  const allCryptoNames = await dataCryptoNames();
   sectionCryptoCurrencies.innerHTML = "";
   Object.entries(currentCryptoData).forEach((coin,i) => {
     const type = coin[1].percentage > 0 ? "increase" : "decrease";
     const html = `
         <div class="container-crypto-currencies">
           <div class="flex">
-            <img class="crypto-image" src="https://www.cryptocompare.com/${
-              allCryptoNames[i][1]
-            }" alt="">
+            <img class="crypto-image" src="https://www.cryptocompare.com/${allCryptoNames[i][1]}" alt="">
             <div>
               <p class="crypto-name">${allCryptoNames[i][0]}</p>
               <p class="crypto-ticker">${coin[0]}</p>
             </div>
           </div>
-          <div class="right">
-            <p class="crypto-price crypto-price-${coin[0].toLowerCase()}">${convertCurrencyStyle(
-      coin[1].price
-    )}</p>
-            <p class="crypto-percentage crypto-percentage-${coin[0].toLowerCase()} ${type} text-end">${
-      coin[1].percentage
-    }%</p>
+          <div>
+            <p class="crypto-price crypto-price-${coin[0].toLowerCase()}">${convertCurrencyStyle(coin[1].price)}</p>
+            <p class="crypto-percentage crypto-percentage-${coin[0].toLowerCase()} ${type} text-end">${coin[1].percentage}%</p>
           </div>
         </div>
     `;
     sectionCryptoCurrencies.insertAdjacentHTML("afterbegin", html);
-    });
+  });
   setTimeout(() => (sectionCryptoCurrencies.style.opacity = 1), 100);
   setInterval(updateCryptoData, 1000 * 10);
 }
@@ -132,4 +128,4 @@ function fadeDecrease(element, price) {
   }, 1000);
 }
 
-export { displayCryptoCurrencies };
+export { displayCryptoCurrencies, currentCryptoData };

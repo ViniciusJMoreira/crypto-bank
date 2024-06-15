@@ -4,7 +4,7 @@ export const wallet = {
     BTC: [100, -70.5, 152, 96, -27.1],
     ETH: [100, -70.5, 152, 96, -27.1],
   },
-  dollar: { 
+  dollar: {
     movements: [21.7, -750, 62.9, -124],
   },
   pound: {
@@ -12,5 +12,5 @@ export const wallet = {
   },
   real: {
     movements: [],
-  }
+  },
 };

@@ -23,7 +23,6 @@ button {
 }
 
 // HEADER 
-
 header {
   margin-block: 3rem 2rem;
   text-align: center;
@@ -45,42 +44,38 @@ header {
   & .summary-value {
     font-size: .75rem;
   }
+}
 
-  & .nav-portfolio-icons {
-    margin-top: 1.5rem;
-
-    & span {
-      display: block;
-      font-size: .75rem;
-      padding-top: .2rem;
-    }
-  }
-
-  & .nav-portfolio-icons {
+// NAV
+.nav-portfolio-icons {
   display: flex;
   justify-content: space-around;
-
-    & button {
-      position: relative;
-      background-color: #1C82e2;
-      color: #fff;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      font-size: 1.2rem;
-      z-index: 1;
-    }
-    & button i {
-      position: absolute;
-      width: inherit;
-      border-radius: 50%;
-      height: inherit;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%,-50%);
-      display: grid;
-      place-items: center;
-    }
+  margin-top: 1.5rem;
+  & span {
+    display: block;
+    font-size: .75rem;
+    padding-top: .2rem;
+  }
+  & button {
+    position: relative;
+    background-color: #1C82e2;
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    z-index: 1;
+  }
+  & button i {
+    position: absolute;
+    width: inherit;
+    border-radius: 50%;
+    height: inherit;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: grid;
+    place-items: center;
   }
 }
 
@@ -92,40 +87,7 @@ main {
   margin-block: 2rem;
 }
 
-
-.section-wallet {
-  display: none;
-}
-
-.col-movements {
-  // border: 1px solid;
-  border-radius: .3rem;
-  padding: .6rem .7rem;
-  background-color: #1b2f56;
-}
-
-.container-movements {
-  display: none;
-  opacity: 0;
-  transition: opacity .2s ease-in;
-  // border: 1px solid;
-  background-color: #1b2f56;
-  border-bottom-left-radius: .3rem;
-  border-bottom-right-radius: .3rem;
-}
-
-.movements-row {
-  padding: .6rem .7rem;
-  display: flex;
-  justify-content: space-between;
-  text-transform: capitalize;
-}
-
-:where(.movements-description, .movements-date, .crypto-ticker, .crypto-percentage) {
-  font-size: .75rem;
-  color: #c9c9c9;
-}
-
+// HOME
 .container-crypto-currencies {
   display: block;
   opacity: 1;
@@ -138,24 +100,58 @@ main {
   justify-content: space-between;
   background-color: #1b2f56;
   text-transform: capitalize;
+}
+:where(.crypto-price, .crypto-percentage) {
+  transition: color 1s ease-in-out;
+  // border:1px solid;
+}
+:where(.crypto-ticker, .crypto-percentage) {
+  font-size: .75rem;
+  color: #c9c9c9;
+}
+.crypto-image {
+  width: 30px;
+  height: 30px;
+  margin-right: .25rem;
+}
 
-  & :where(.crypto-price, .crypto-percentage) {
-    transition: color 1s ease-in-out;
-    // border:1px solid;
+// WALET
+.section-wallet {
+  display: none;
+  & .select-container {
+    // border: 1px solid;
+    padding: .6rem .7rem;
+    background-color: #1b2f56;
   }
-
-  & :where(.crypto-name, .crypto-price) {
-  // font-size: 16px;
-    // border:1px solid;
+  & .select-fiat-wallet {
+    justify-content: space-between;
+    border-bottom-left-radius: .3rem;
+    border-bottom-right-radius: .3rem;
   }
-
+  & .select-crypto-wallet {
+    border-top-left-radius: .3rem;
+    border-top-right-radius: .3rem;
+  }
+  & .container-list {
+    display: block;
+    opacity: 1;
+    transition: opacity .2s ease-in;
+    margin-top: .6rem;
+    // border: 1px solid;
+    background-color: #1b2f56;
+  }
+  & .crypto-item {
+    padding-block: .6rem;
+    display: flex;
+    justify-content: space-between;
+    text-transform: capitalize;
+  }
   & .crypto-image {
-    width: 30px;
-    height: 30px;
-    margin-right: .25rem;
+    filter: grayscale(100%);
   }
 }
-  
+
+/// UTILITIES
 .decrease {
   color: #ff3838;
 }

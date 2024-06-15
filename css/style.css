@@ -40,19 +40,18 @@ header .balance {
 header .summary-value {
   font-size: 0.75rem;
 }
-header .nav-portfolio-icons {
+
+.nav-portfolio-icons {
+  display: flex;
+  justify-content: space-around;
   margin-top: 1.5rem;
 }
-header .nav-portfolio-icons span {
+.nav-portfolio-icons span {
   display: block;
   font-size: 0.75rem;
   padding-top: 0.2rem;
 }
-header .nav-portfolio-icons {
-  display: flex;
-  justify-content: space-around;
-}
-header .nav-portfolio-icons button {
+.nav-portfolio-icons button {
   position: relative;
   background-color: #1C82e2;
   color: #fff;
@@ -62,7 +61,7 @@ header .nav-portfolio-icons button {
   font-size: 1.2rem;
   z-index: 1;
 }
-header .nav-portfolio-icons button i {
+.nav-portfolio-icons button i {
   position: absolute;
   width: inherit;
   border-radius: 50%;
@@ -79,37 +78,6 @@ main {
   margin-block: 2rem;
 }
 
-.section-wallet {
-  display: none;
-}
-
-.col-movements {
-  border-radius: 0.3rem;
-  padding: 0.6rem 0.7rem;
-  background-color: #1b2f56;
-}
-
-.container-movements {
-  display: none;
-  opacity: 0;
-  transition: opacity 0.2s ease-in;
-  background-color: #1b2f56;
-  border-bottom-left-radius: 0.3rem;
-  border-bottom-right-radius: 0.3rem;
-}
-
-.movements-row {
-  padding: 0.6rem 0.7rem;
-  display: flex;
-  justify-content: space-between;
-  text-transform: capitalize;
-}
-
-:where(.movements-description, .movements-date, .crypto-ticker, .crypto-percentage) {
-  font-size: 0.75rem;
-  color: #c9c9c9;
-}
-
 .container-crypto-currencies {
   display: block;
   opacity: 1;
@@ -122,13 +90,53 @@ main {
   background-color: #1b2f56;
   text-transform: capitalize;
 }
-.container-crypto-currencies :where(.crypto-price, .crypto-percentage) {
+
+:where(.crypto-price, .crypto-percentage) {
   transition: color 1s ease-in-out;
 }
-.container-crypto-currencies .crypto-image {
+
+:where(.crypto-ticker, .crypto-percentage) {
+  font-size: 0.75rem;
+  color: #c9c9c9;
+}
+
+.crypto-image {
   width: 30px;
   height: 30px;
   margin-right: 0.25rem;
+}
+
+.section-wallet {
+  display: none;
+}
+.section-wallet .select-container {
+  padding: 0.6rem 0.7rem;
+  background-color: #1b2f56;
+}
+.section-wallet .select-fiat-wallet {
+  justify-content: space-between;
+  border-bottom-left-radius: 0.3rem;
+  border-bottom-right-radius: 0.3rem;
+}
+.section-wallet .select-crypto-wallet {
+  border-top-left-radius: 0.3rem;
+  border-top-right-radius: 0.3rem;
+}
+.section-wallet .container-list {
+  display: block;
+  opacity: 1;
+  transition: opacity 0.2s ease-in;
+  margin-top: 0.6rem;
+  background-color: #1b2f56;
+}
+.section-wallet .crypto-item {
+  padding-block: 0.6rem;
+  display: flex;
+  justify-content: space-between;
+  text-transform: capitalize;
+}
+.section-wallet .crypto-image {
+  filter: grayscale(100%);
 }
 
 .decrease {

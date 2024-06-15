@@ -1,7 +1,11 @@
 import { updateBalance } from "./home.js";
 import { displayCryptoCurrencies } from "./cryptoCurrencies.js";
-import { displaySectionMovements } from "./movements.js";
+import { displayFiatWalletTotal } from "./fiatWallet.js";
+import { displayCryptoWallet, toggleCryptoWallet } from "./cryptoWallet.js";
 
+////// Home section
+// display balance
+// updateBalance();
 // display crypto currencies
 await displayCryptoCurrencies();
 
@@ -15,9 +19,15 @@ function showHiddenSection(event) {
 //display home section
 document.querySelector(".btn-home").addEventListener("click", showHiddenSection);
 
+////// Wallet section
 // display wallet section
-document.querySelector(".btn-wallet").addEventListener("click", showHiddenSection);
-
-// display movements account
-updateBalance();
-document.querySelector('.col-movements').addEventListener("click", displaySectionMovements);
+document.querySelector(".btn-wallet").addEventListener("click", (event) => {
+  // show fiat wallet
+  displayFiatWalletTotal();
+  // show crypto wallet
+  displayCryptoWallet();
+  // show and hidden wallet section
+  showHiddenSection(event);
+});
+// show hidden crypto wallet
+document.querySelector('.select-crypto-wallet').addEventListener("click", toggleCryptoWallet);
