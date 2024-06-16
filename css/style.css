@@ -79,7 +79,7 @@ main {
 }
 
 .section-crypto-currencies {
-  display: none;
+  display: block;
 }
 
 .container-crypto-currencies {
@@ -109,7 +109,7 @@ main {
 }
 
 .section-deposit {
-  display: block;
+  display: none;
   text-align: center;
 }
 .section-deposit .keyboard {

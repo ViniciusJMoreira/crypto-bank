@@ -90,7 +90,7 @@ main {
 
 // HOME
 .section-crypto-currencies {
-  display: none;
+  display: block;
 }
 .container-crypto-currencies {
   transition: all .4s ease-in;
@@ -119,7 +119,7 @@ main {
 
 // DEPOSIT
 .section-deposit {
-  display: block;
+  display: none;
   text-align: center;
   // border: 1px solid;
   & .keyboard {
