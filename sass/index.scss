@@ -15,6 +15,7 @@ body {
   min-height: 100vh;
   background-color : #0C1E42;
   color: #fff;
+  // border: 1px solid;
 }
 
 button {
@@ -88,10 +89,11 @@ main {
 }
 
 // HOME
+.section-crypto-currencies {
+  display: none;
+}
 .container-crypto-currencies {
-  display: block;
-  opacity: 1;
-  transition: all .7s ease-in;
+  transition: all .4s ease-in;
   margin-block: 1rem;
   padding: .6rem .7rem;
   // border: 1px solid;
@@ -113,6 +115,51 @@ main {
   width: 30px;
   height: 30px;
   margin-right: .25rem;
+}
+
+// DEPOSIT
+.section-deposit {
+  display: block;
+  text-align: center;
+  // border: 1px solid;
+  & .keyboard {
+    // border: 1px solid;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    height: 350px;
+  }
+  & .output-price {
+    margin-block: 3rem;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    font-size: 1.7rem;
+    color: #c9c9c9;
+    text-align: center;
+    // border: 1px solid;
+  }
+  & i {
+    font-size: 1rem;
+  }
+  & span {
+    font-size: 2.3rem;
+    color: #fff;
+  }
+  & .key {
+    // border: 1px solid #ffffff6d;
+    display: grid;
+    place-items: center;
+    font-size: 1.7rem;
+  }
+  & button {
+    margin-top: .7rem;
+    width: 100%;
+    // border: 1px solid;
+    color: #fff;
+    padding-block: .7rem;
+    background-color: #1C82e2;
+    border-radius: .3rem;
+  }
 }
 
 // WALET

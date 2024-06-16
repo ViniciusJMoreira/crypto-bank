@@ -78,10 +78,12 @@ main {
   margin-block: 2rem;
 }
 
+.section-crypto-currencies {
+  display: none;
+}
+
 .container-crypto-currencies {
-  display: block;
-  opacity: 1;
-  transition: all 0.7s ease-in;
+  transition: all 0.4s ease-in;
   margin-block: 1rem;
   padding: 0.6rem 0.7rem;
   border-radius: 0.2rem;
@@ -104,6 +106,45 @@ main {
   width: 30px;
   height: 30px;
   margin-right: 0.25rem;
+}
+
+.section-deposit {
+  display: block;
+  text-align: center;
+}
+.section-deposit .keyboard {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  height: 350px;
+}
+.section-deposit .output-price {
+  margin-block: 3rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.7rem;
+  color: #c9c9c9;
+  text-align: center;
+}
+.section-deposit i {
+  font-size: 1rem;
+}
+.section-deposit span {
+  font-size: 2.3rem;
+  color: #fff;
+}
+.section-deposit .key {
+  display: grid;
+  place-items: center;
+  font-size: 1.7rem;
+}
+.section-deposit button {
+  margin-top: 0.7rem;
+  width: 100%;
+  color: #fff;
+  padding-block: 0.7rem;
+  background-color: #1C82e2;
+  border-radius: 0.3rem;
 }
 
 .section-wallet {

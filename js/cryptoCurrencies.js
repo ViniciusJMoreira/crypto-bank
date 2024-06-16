@@ -20,7 +20,7 @@ async function fetchCryptoNames() {
 async function fetchCryptoCurrencies() {
   try {
     const allCryptoData = await fetch(
-      `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=MATIC,CRO,MATIC,AVAX,ADA,MANA,XRP,ETH,BTC&tsyms=USD,EUR&api_key={${API_KEY}}`
+      `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=CRO,MATIC,SOL,BNB,AVAX,ADA,MANA,XRP,ETH,BTC&tsyms=USD,EUR&api_key={${API_KEY}}`
     ).then(res => res.json()).then(res => res.RAW);
     return allCryptoData;
   } catch (err) {
