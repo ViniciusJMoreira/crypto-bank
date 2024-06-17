@@ -12,6 +12,7 @@ html {
 }
 
 body {
+  position: relative;
   min-height: 100vh;
   background-color : #0C1E42;
   color: #fff;
@@ -25,6 +26,7 @@ button {
 
 // HEADER 
 header {
+  display: block;
   margin-block: 3rem 2rem;
   text-align: center;
   // border: 1px solid #fff;
@@ -75,8 +77,6 @@ header {
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    display: grid;
-    place-items: center;
   }
 }
 
@@ -84,8 +84,7 @@ header {
 
 main {
   // border: 1px solid;
-  padding-inline: 1rem;
-  margin-block: 2rem;
+  margin: 2rem  1.2rem;
 }
 
 // HOME
@@ -121,15 +120,16 @@ main {
 .section-deposit {
   display: none;
   text-align: center;
+  padding-inline: .5rem;
   // border: 1px solid;
   & .keyboard {
     // border: 1px solid;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    height: 350px;
+    height: 260px;
   }
   & .output-price {
-    margin-block: 3rem;
+    margin-block: 3rem 1.5rem;
     justify-content: center;
     align-items: center;
     gap: .5rem;
@@ -156,7 +156,7 @@ main {
     width: 100%;
     // border: 1px solid;
     color: #fff;
-    padding-block: .7rem;
+    padding-block: 1rem;
     background-color: #1C82e2;
     border-radius: .3rem;
   }
@@ -221,4 +221,9 @@ hr {
 
 .noselect {
   user-select: none;
+}
+
+.grid {
+  display: grid;
+  place-items: center;
 }
