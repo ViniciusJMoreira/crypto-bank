@@ -112,11 +112,6 @@ main {
   text-align: center;
   padding-inline: 0.5rem;
 }
-.section-deposit .keyboard {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  height: 260px;
-}
 .section-deposit .output-price {
   margin-block: 3rem 1.5rem;
   justify-content: center;
@@ -126,6 +121,14 @@ main {
   color: #c9c9c9;
   text-align: center;
 }
+.section-deposit .keyboard {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  height: 260px;
+  gap: 1.5rem;
+  width: 200px;
+  margin-inline: auto;
+}
 .section-deposit i {
   font-size: 1rem;
 }
@@ -134,15 +137,17 @@ main {
   color: #fff;
 }
 .section-deposit .key {
+  border: 1px solid rgba(255, 255, 255, 0.4274509804);
+  border-radius: 0.8rem;
   display: grid;
   place-items: center;
   font-size: 1.7rem;
 }
 .section-deposit button {
-  margin-top: 0.7rem;
-  width: 100%;
+  margin-block: 1.5rem;
+  width: 200px;
   color: #fff;
-  padding-block: 1rem;
+  padding-block: 0.7rem;
   background-color: #1C82e2;
   border-radius: 0.3rem;
 }
