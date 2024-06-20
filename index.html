@@ -37,29 +37,48 @@
       </div>
     </nav>
   </header>
-  <section class="section-deposit noselect">
-    <div class="flex output-price">
-      <span class="current-price">0</span>
-      <div class="current-currency">EUR</div>
-    </div>
-    <div class="keyboard">
-      <div class="key" data-key="9">9</div>
-      <div class="key" data-key="8">8</div>
-      <div class="key" data-key="7">7</div>
-      <div class="key" data-key="6">6</div>
-      <div class="key" data-key="5">5</div>
-      <div class="key" data-key="4">4</div>
-      <div class="key" data-key="3">3</div>
-      <div class="key" data-key="2">2</div>
-      <div class="key" data-key="1">1</div>
-      <div class="key" data-key=".">.</div>
-      <div class="key" data-key="0">0</div>
-      <div class="key" data-key="backspace"><i class="bi bi-backspace"></i></div>
-    </div>
-    <button>NEXT</button>
-  </section>
   <main class="app">
     <section class="section-crypto-currencies">
+    </section>
+    <section class="section-deposit noselect">
+      <nav class="flex nav-deposit">
+        <div class="icon-back-page">
+          <i class="bi bi-box-arrow-left"></i>
+        </div>
+        <menu class="select-currency">
+          <li class="currency select">
+            <img src="media/europe-flag.png" alt="">
+            EUR
+          </li>
+          <li class="currency">
+            <img src="media/usa-flag.png" alt="">
+            USD
+          </li>
+          <li class="currency">
+            <img src="media/gbp-flag.png" alt="">
+            GBP
+          </li>
+        </menu>
+      </nav>
+      <div class="flex output-price">
+        <span class="current-price">0.00</span>
+        <div class="current-currency">EUR</div>
+      </div>
+      <div class="keyboard">
+        <div class="key" data-key="9">9</div>
+        <div class="key" data-key="8">8</div>
+        <div class="key" data-key="7">7</div>
+        <div class="key" data-key="6">6</div>
+        <div class="key" data-key="5">5</div>
+        <div class="key" data-key="4">4</div>
+        <div class="key" data-key="3">3</div>
+        <div class="key" data-key="2">2</div>
+        <div class="key" data-key="1">1</div>
+        <div class="key" data-key=".">.</div>
+        <div class="key" data-key="0">0</div>
+        <div class="key" data-key="backspace"><i class="bi bi-backspace"></i></div>
+      </div>
+      <button>NEXT</button>
     </section>
     <section class="section-wallet">
       <div class="select-container select-crypto-wallet noselect">
@@ -73,8 +92,8 @@
       </div>
     </section>
   </main>
-  <footer>
-  </footer>
+  <!-- <footer>
+  </footer> -->
   <script src="js/app.js" type="module"></script>
 </body>
 </html>
