@@ -45,8 +45,5 @@ export function displayDeposit() {
       if ((li.style.display === "block")) li.style.display = "none";
       else li.style.display = "block";
     });
-    // if ((document.querySelector(".select-currency li").style.display === "block"))
-    //   document.querySelector(".select-currency li").style.display = "none";
-    // else document.querySelector(".select-currency li").style.display = "block";
   })
 }
