@@ -2,7 +2,7 @@ import { displayBalance ,calcDisplaySummary } from "./home.js";
 import { displayCryptoCurrencies } from "./cryptoCurrencies.js";
 import { displayFiatWalletTotal } from "./fiatWallet.js";
 import { displayCryptoWallet, toggleCryptoWallet } from "./cryptoWallet.js";
-import { convertCurrency } from "./convertCurrency.js";
+import { displayDeposit } from "./deposit.js";
 
 ////// Home section
 // display crypto currencies
@@ -13,18 +13,8 @@ calcDisplaySummary();
 
 //display home section
 document.querySelector(".btn-home").addEventListener("click", showHiddenSection);
-
 ////// Deposit section
-let values = '';
-document.querySelector('.btn-deposit').addEventListener("click", showHiddenSection);
-document.querySelectorAll('.key').forEach((keys) => {
-  keys.addEventListener('click', (event) => {
-    const value = event.target.dataset.key;
-    values += value;
-    document.querySelector(".current-price").textContent = values;
-  })
-})
-
+document.querySelector('.btn-deposit').addEventListener("click", displayDeposit);
 ////// Wallet section
 // display wallet section
 document.querySelector(".btn-wallet").addEventListener("click", (event) => {

@@ -25,7 +25,7 @@ button {
 }
 
 header {
-  display: none;
+  display: block;
   margin-block: 3rem 2rem;
   text-align: center;
 }
@@ -74,7 +74,7 @@ header .summary-value {
 }
 
 .section-crypto-currencies {
-  display: none;
+  display: block;
   padding: 2rem 1.2rem;
 }
 
@@ -105,31 +105,32 @@ header .summary-value {
 }
 
 .section-deposit {
-  display: block;
-  text-align: center;
-  padding-inline: 0.5rem;
+  display: none;
+  grid-template-rows: auto 1fr;
   width: 100%;
-  height: 100%;
+  height: 100vh;
 }
 .section-deposit .nav-deposit {
+  width: 100%;
   justify-content: space-between;
-  padding: 0.7rem;
+  padding: 1.5rem 1.2rem;
 }
 .section-deposit .icon-back-page i {
-  font-size: 1.4rem;
+  font-size: 1.7rem;
 }
 .section-deposit .select-currency {
   list-style: none;
-  text-align: start;
   border: 1.5px solid;
   border-radius: 0.5rem;
   width: 110px;
   overflow: hidden;
+  position: relative;
 }
 .section-deposit li {
-  display: none;
+  text-align: start;
   padding: 0.4rem;
   text-transform: uppercase;
+  font-weight: 700;
 }
 .section-deposit li:nth-child(2) {
   border-top-style: solid;
@@ -139,16 +140,24 @@ header .summary-value {
 }
 .section-deposit li:not(.select) {
   background-color: #1b2f56;
+  display: none;
 }
 .section-deposit li.select {
   display: block;
 }
 .section-deposit li.select i {
-  text-align: end;
+  position: absolute;
+  right: 0;
+  padding-right: 0.4rem;
 }
 .section-deposit li > img {
   width: 16px;
   vertical-align: middle;
+}
+.section-deposit main {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .section-deposit .output-price {
   margin-block: 3rem 1.5rem;
@@ -157,7 +166,10 @@ header .summary-value {
   gap: 0.5rem;
   font-size: 1.7rem;
   color: #c9c9c9;
-  text-align: center;
+}
+.section-deposit .current-price {
+  font-size: 2.5rem;
+  color: #fff;
 }
 .section-deposit .keyboard {
   display: grid;
@@ -167,27 +179,35 @@ header .summary-value {
   width: 300px;
   margin-inline: auto;
 }
-.section-deposit i {
-  font-size: 1rem;
-}
-.section-deposit span {
-  font-size: 2.3rem;
-  color: #fff;
+.section-deposit .keyboard i {
+  font-size: 1.3rem;
 }
 .section-deposit .key {
-  border: 1px solid;
   border-radius: 0.7rem;
   display: grid;
   place-items: center;
   font-size: 1.7rem;
+  background-color: #1b2f56;
+  position: relative;
+}
+.section-deposit .key i {
+  position: absolute;
+  width: 100%;
+  border-radius: 0.7rem;
+  height: 100%;
+  display: grid;
+  place-items: center;
 }
 .section-deposit button {
   margin-block: 1.5rem;
   width: 300px;
   color: #fff;
-  padding-block: 0.8rem;
+  text-transform: uppercase;
+  padding-block: 0.9rem;
   background-color: #1C82e2;
   border-radius: 0.3rem;
+  letter-spacing: 0.1rem;
+  font-weight: 700;
 }
 
 .section-wallet {
