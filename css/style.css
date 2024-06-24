@@ -105,26 +105,30 @@ header .summary-value {
 }
 
 .section-deposit {
-  display: none;
-  grid-template-rows: auto 1fr;
+  position: none;
   width: 100%;
   height: 100vh;
+  display: none;
+  grid-template-rows: auto 1fr;
 }
 .section-deposit .nav-deposit {
   width: 100%;
+  position: relative;
   justify-content: space-between;
   padding: 1.5rem 1.2rem;
 }
 .section-deposit .icon-back-page i {
-  font-size: 1.7rem;
+  font-size: 1.2rem;
 }
 .section-deposit .select-currency {
   list-style: none;
-  border: 1.5px solid;
+  border: 1px solid #1b2f56;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border-radius: 0.5rem;
   width: 110px;
   overflow: hidden;
   position: relative;
+  z-index: 10;
 }
 .section-deposit li {
   text-align: start;
@@ -159,8 +163,11 @@ header .summary-value {
   align-items: center;
   justify-content: center;
 }
+.section-deposit img.flag-currency {
+  width: 128px;
+}
 .section-deposit .output-price {
-  margin-block: 3rem 1.5rem;
+  margin-block: 1.5rem;
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
@@ -173,22 +180,24 @@ header .summary-value {
 }
 .section-deposit .keyboard {
   display: grid;
+  width: 300px;
   grid-template-columns: repeat(3, 1fr);
   height: 350px;
   gap: 1.5rem;
-  width: 300px;
   margin-inline: auto;
 }
 .section-deposit .keyboard i {
   font-size: 1.3rem;
 }
 .section-deposit .key {
+  border: 1px solid #0C1E42;
   border-radius: 0.7rem;
   display: grid;
   place-items: center;
   font-size: 1.7rem;
   background-color: #1b2f56;
   position: relative;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .section-deposit .key i {
   position: absolute;
@@ -210,6 +219,11 @@ header .summary-value {
   font-weight: 700;
 }
 
+@keyframes fade-out {
+  100% {
+    transform: translateY(0%);
+  }
+}
 .section-wallet {
   display: none;
   padding: 2rem 1.2rem;

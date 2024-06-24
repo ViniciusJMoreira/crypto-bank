@@ -1,7 +1,7 @@
 import { convertCurrency } from "./convertCurrency.js";
 const sectionDeposit = document.querySelector(".section-deposit");
-let values = "";
 export function displayDeposit() {
+  let values = "";
   // show deposit and hidden header and all section
   document.querySelectorAll('.app section').forEach(section => section.style.display = 'none');
   sectionDeposit.style.display = "grid";

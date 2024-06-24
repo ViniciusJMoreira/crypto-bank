@@ -118,27 +118,32 @@ main.app {
 }
 
 // DEPOSIT
-.section-deposit {
-  display: none;
-  grid-template-rows: auto 1fr;
+.section-deposit {    
+  position: none;
   width: 100%;
   height: 100vh;
+  display: none;
+  grid-template-rows: auto 1fr;
   // border: 1px solid;
   & .nav-deposit {
     width: 100%;
+    position: relative;
+    // border: 1px solid;
     justify-content: space-between;
     padding: 1.5rem 1.2rem;
   }
   & .icon-back-page i {
-    font-size: 1.7rem;
+    font-size: 1.2rem;
   }
   & .select-currency {
     list-style: none;
-    border: 1.5px solid;
+    border: 1px solid #1b2f56;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border-radius: .5rem;
     width: 110px;
     overflow: hidden;
     position: relative;
+    z-index: 10;
   }
   & li {
     text-align: start;
@@ -173,8 +178,13 @@ main.app {
     align-items: center;
     justify-content: center;
   }
+  & img.flag-currency {
+    width: 128px;
+  }
+  // OUTPUT PRICE
   & .output-price {
-    margin-block: 3rem 1.5rem;
+    // border: 1px solid;
+    margin-block: 1.5rem;
     justify-content: center;
     align-items: center;
     gap: .5rem;
@@ -185,13 +195,14 @@ main.app {
     font-size: 2.5rem;
     color: #fff;
   }
+  //  KEYBOARD
   & .keyboard {
     // border: 1px solid;
     display: grid;
+    width: 300px;
     grid-template-columns: repeat(3, 1fr);
     height: 350px;
     gap: 1.5rem;
-    width: 300px;
     margin-inline: auto;
   }
   & .keyboard i {
@@ -199,12 +210,14 @@ main.app {
   }
   & .key {
     // border: 1.5px solid;
+    border: 1px solid #0C1E42;
     border-radius: .7rem;
     display: grid;
     place-items: center;
     font-size: 1.7rem;
     background-color: #1b2f56;
     position: relative;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   }
   & .key i {
     position: absolute;
@@ -225,6 +238,11 @@ main.app {
     border-radius: .3rem;
     letter-spacing: .1rem;
     font-weight: 700;
+  }
+}
+@keyframes fade-out {
+  100% {
+    transform: translateY(0%);
   }
 }
 
