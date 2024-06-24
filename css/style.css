@@ -105,7 +105,6 @@ header .summary-value {
 }
 
 .section-deposit {
-  position: none;
   width: 100%;
   height: 100vh;
   display: none;
@@ -197,6 +196,12 @@ header .summary-value {
   background-color: #1b2f56;
   position: relative;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.section-deposit .key:hover {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 5px;
+  transform: translate(1%, 1%);
+  transition: all 0.3s;
+  background-color: #0C1E42;
 }
 .section-deposit .key i {
   position: absolute;
