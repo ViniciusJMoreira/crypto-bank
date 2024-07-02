@@ -183,15 +183,24 @@ main.app {
   & .output-price {
     // border: 1px solid;
     margin-block: 1.5rem;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(2, auto);
+    justify-items: center;
     align-items: center;
-    gap: .5rem;
+    column-gap: .5rem;
     font-size: 1.7rem;
     color: #c9c9c9;
   }
   & .current-price {
     font-size: 2.5rem;
+    line-height: 2.2rem;
     color: #fff;
+  }
+  & .deposit-current-balance {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    font-size: .8rem;
   }
   //  KEYBOARD
   & .keyboard {
@@ -199,7 +208,7 @@ main.app {
     display: grid;
     width: 300px;
     grid-template-columns: repeat(3, 1fr);
-    height: 350px;
+    height: 320px;
     gap: 1.5rem;
     margin-inline: auto;
   }

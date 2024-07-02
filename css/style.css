@@ -166,21 +166,30 @@ header .summary-value {
 }
 .section-deposit .output-price {
   margin-block: 1.5rem;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: repeat(2, auto);
+  justify-items: center;
   align-items: center;
-  gap: 0.5rem;
+  column-gap: 0.5rem;
   font-size: 1.7rem;
   color: #c9c9c9;
 }
 .section-deposit .current-price {
   font-size: 2.5rem;
+  line-height: 2.2rem;
   color: #fff;
+}
+.section-deposit .deposit-current-balance {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  font-size: 0.8rem;
 }
 .section-deposit .keyboard {
   display: grid;
   width: 300px;
   grid-template-columns: repeat(3, 1fr);
-  height: 350px;
+  height: 320px;
   gap: 1.5rem;
   margin-inline: auto;
 }

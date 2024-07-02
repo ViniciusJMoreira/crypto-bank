@@ -1,15 +1,14 @@
 import { convertCurrency, convertCurrencyStyle } from "./convertCurrency.js";
 import { currentCurrency } from "./currentCurrency.js";
+import { totalBalance } from "./totalBalance.js";
 import { wallet } from "./wallet.js";
 const labelBalance = document.querySelector(".current-balance");
 const labelSumIn = document.querySelector(".summary-value-in");
 const labelSumOut = document.querySelector(".summary-value-out");
 
 function displayBalance() {
-  const totalBalance = Object.entries(wallet[currentCurrency])
-  .flatMap(mov => mov[1])
-  .reduce((acc, mov) => (acc += mov),0);
-  labelBalance.textContent = convertCurrency(totalBalance);
+  const currentBalance = totalBalance();
+  labelBalance.textContent = convertCurrency(currentBalance);
 }
 
 function calcDisplaySummary() {
@@ -25,4 +24,6 @@ function calcDisplaySummary() {
   labelSumOut.textContent = convertCurrency(outcomes);
 }
 
+displayBalance();
+calcDisplaySummary();
 export { displayBalance, calcDisplaySummary };

@@ -5,12 +5,7 @@ import { displayCryptoWallet, toggleCryptoWallet } from "./cryptoWallet.js";
 import { backToHome, displayDeposit } from "./deposit.js";
 
 ////// Home section
-// display crypto currencies
-await displayCryptoCurrencies();
-// display balance
-displayBalance();
-calcDisplaySummary();
-//display home section
+// Display home section
 document.querySelector(".btn-home").addEventListener("click", (event) => {
   displayBalance();
   calcDisplaySummary();
