@@ -13,7 +13,7 @@ export function displayDeposit() {
   document.querySelector(".header").style.display = "none";
   sectionDeposit.style.display = "grid";
   // show total balance
-  const currentBalance = totalBalance();
+  const currentBalance = wallet[currentCurrency].movements.reduce((acc,mov) => acc+=mov,0);
   labelCurrentBalance.innerHTML = `&#8776; ${convertCurrency(currentBalance)}`;
 }
 
@@ -64,7 +64,8 @@ document.querySelector(".btn-deposit-wallet").addEventListener("click", () => {
   if (values > 0) {
     wallet[currentCurrency].movements.push(Number(values));
     labelCurrentPrice.textContent = "0,00";
-    const currentBalance = totalBalance();
+    values = "";
+    const currentBalance = wallet[currentCurrency].movements.reduce((acc,mov) => acc+=mov,0);
     labelCurrentBalance.innerHTML = `&#8776; ${convertCurrency(currentBalance)}`;
   }
 });
