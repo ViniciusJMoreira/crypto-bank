@@ -1,6 +1,5 @@
 import { convertCurrency } from "./convertCurrency.js";
 import { currentCurrency } from "./currentCurrency.js";
-import { totalBalance } from "./totalBalance.js";
 import { wallet } from "./wallet.js";
 const sectionDeposit = document.querySelector(".section-deposit");
 const labelCurrentPrice = document.querySelector(".current-price");

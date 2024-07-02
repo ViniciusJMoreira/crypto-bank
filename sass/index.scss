@@ -177,7 +177,7 @@ main.app {
     margin-block-start: 5rem;
   }
   & img.flag-currency {
-    width: 128px;
+    width: 100px;
   }
   // OUTPUT PRICE
   & .output-price {
@@ -189,11 +189,11 @@ main.app {
     justify-items: center;
     align-items: center;
     column-gap: .5rem;
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     color: #c9c9c9;
   }
   & .current-price {
-    font-size: 2.5rem;
+    font-size: 2rem;
     line-height: 2.2rem;
     color: #fff;
   }
@@ -208,7 +208,7 @@ main.app {
     display: grid;
     width: 300px;
     grid-template-columns: repeat(3, 1fr);
-    height: 320px;
+    height: 250px;
     gap: 1.5rem;
     margin-inline: auto;
   }
@@ -221,7 +221,7 @@ main.app {
     border-radius: .7rem;
     display: grid;
     place-items: center;
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     background-color: #1b2f56;
     position: relative;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;

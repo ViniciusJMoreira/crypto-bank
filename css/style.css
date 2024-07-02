@@ -162,7 +162,7 @@ header .summary-value {
   margin-block-start: 5rem;
 }
 .section-deposit img.flag-currency {
-  width: 128px;
+  width: 100px;
 }
 .section-deposit .output-price {
   margin-block: 1.5rem;
@@ -172,11 +172,11 @@ header .summary-value {
   justify-items: center;
   align-items: center;
   column-gap: 0.5rem;
-  font-size: 1.7rem;
+  font-size: 1.5rem;
   color: #c9c9c9;
 }
 .section-deposit .current-price {
-  font-size: 2.5rem;
+  font-size: 2rem;
   line-height: 2.2rem;
   color: #fff;
 }
@@ -189,7 +189,7 @@ header .summary-value {
   display: grid;
   width: 300px;
   grid-template-columns: repeat(3, 1fr);
-  height: 320px;
+  height: 250px;
   gap: 1.5rem;
   margin-inline: auto;
 }
@@ -201,7 +201,7 @@ header .summary-value {
   border-radius: 0.7rem;
   display: grid;
   place-items: center;
-  font-size: 1.7rem;
+  font-size: 1.5rem;
   background-color: #1b2f56;
   position: relative;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
