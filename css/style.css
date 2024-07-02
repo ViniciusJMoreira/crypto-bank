@@ -162,7 +162,7 @@ header .summary-value {
   margin-block-start: 5rem;
 }
 .section-deposit img.flag-currency {
-  width: 100px;
+  width: 120px;
 }
 .section-deposit .output-price {
   margin-block: 1.5rem;
@@ -189,7 +189,7 @@ header .summary-value {
   display: grid;
   width: 300px;
   grid-template-columns: repeat(3, 1fr);
-  height: 250px;
+  height: 280px;
   gap: 1.5rem;
   margin-inline: auto;
 }

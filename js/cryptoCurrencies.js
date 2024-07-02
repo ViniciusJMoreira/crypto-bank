@@ -127,5 +127,4 @@ function fadeDecrease(element, price) {
     element.classList.remove("decrease");
   }, 1000);
 }
-await displayCryptoCurrencies();
 export { displayCryptoCurrencies, currentCryptoData };

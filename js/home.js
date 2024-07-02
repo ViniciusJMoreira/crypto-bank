@@ -25,8 +25,6 @@ function calcDisplaySummary() {
   labelSumOut.textContent = convertCurrency(outcomes);
 }
 
-
-
 displayBalance();
 calcDisplaySummary();
 export { displayBalance, calcDisplaySummary };
