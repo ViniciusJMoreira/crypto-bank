@@ -7,7 +7,6 @@ import { backToHome, displayDeposit } from "./deposit.js";
 ////// Home section
 // Display home section
 await displayCryptoCurrencies();
-    console.log(document.querySelector(".container-crypto"));
 document.querySelector(".btn-home").addEventListener("click", (event) => {
   displayBalance();
   calcDisplaySummary();
@@ -51,7 +50,7 @@ document.querySelector('.btn-deposit').addEventListener("click", () => {
   // Display deposit section
   displayDeposit();
   //Back to home
-  document.querySelector(".icon-back-page").addEventListener("click", () => {
+  document.querySelector(".icon-nav-back-home").addEventListener("click", () => {
     backToHome();
     displayBalance();
     calcDisplaySummary();

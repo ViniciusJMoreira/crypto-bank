@@ -26,7 +26,6 @@ button {
 
 header {
   display: block;
-  margin-block: 3rem 2rem;
   text-align: center;
 }
 header .text-balance i {
@@ -43,8 +42,19 @@ header .summary-value {
   font-size: 0.75rem;
 }
 
+.nav-header {
+  justify-content: space-between;
+  padding: 1.2rem;
+}
+.nav-header .icon-nav i {
+  font-size: 1.2rem;
+  color: #c9c9c9;
+}
+.nav-header .icon-nav-back-home {
+  display: none;
+}
+
 .nav-portfolio-icons {
-  display: flex;
   justify-content: space-around;
   margin-top: 1.5rem;
 }
@@ -106,60 +116,13 @@ header .summary-value {
 
 .section-deposit {
   width: 100%;
-  height: 100vh;
   display: none;
-}
-.section-deposit .nav-deposit {
-  width: 100%;
-  position: absolute;
-  justify-content: space-between;
-  padding: 1.5rem 1.2rem;
-}
-.section-deposit .icon-back-page i {
-  font-size: 1.2rem;
-}
-.section-deposit .select-currency {
-  list-style: none;
-  border: 1px solid #1b2f56;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  border-radius: 0.5rem;
-  width: 110px;
-  overflow: hidden;
-  position: relative;
-}
-.section-deposit li {
-  text-align: start;
-  padding: 0.4rem;
-  text-transform: uppercase;
-  font-weight: 700;
-}
-.section-deposit li:nth-child(2) {
-  border-top-style: solid;
-  border-bottom-style: solid;
-  border-color: rgba(255, 255, 255, 0.4274509804);
-  border-width: 1px;
-}
-.section-deposit li:not(.select) {
-  background-color: #1b2f56;
-  display: none;
-}
-.section-deposit li.select {
-  display: block;
-}
-.section-deposit li.select i {
-  position: absolute;
-  right: 0;
-  padding-right: 0.4rem;
-}
-.section-deposit li > img {
-  width: 16px;
-  vertical-align: middle;
 }
 .section-deposit main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-block-start: 5rem;
+  margin-block-start: 1rem;
 }
 .section-deposit img.flag-currency {
   width: 120px;

@@ -28,7 +28,6 @@ button {
 // HEADER 
 header {
   display: block;
-  margin-block: 3rem 2rem;
   text-align: center;
   // border: 1px solid #fff;
 
@@ -50,9 +49,59 @@ header {
   }
 }
 
-// NAV
+// NAV HEADER
+.nav-header {
+  // border: 1px solid;
+  justify-content: space-between;
+  padding: 1.2rem;
+  & .icon-nav i {
+    font-size: 1.2rem;
+    color: #c9c9c9;
+  }
+  & .icon-nav-back-home {
+    display: none;
+  }
+  // & .select-currency {
+  //   list-style: none;
+  //   border: 1px solid #1b2f56;
+  //   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  //   border-radius: .5rem;
+  //   width: 110px;
+  //   overflow: hidden;
+  //   position: relative;
+  // }
+  // & li {
+  //   text-align: start;
+  //   padding: .4rem;
+  //   text-transform: uppercase;
+  //   font-weight: 700;
+  // }
+  // & li:nth-child(2) {
+  //   border-top-style: solid;
+  //   border-bottom-style: solid;
+  //   border-color: #ffffff6d;
+  //   border-width: 1px;
+  // }
+  // & li:not(.select) {
+  //   background-color: #1b2f56;
+  //   display: none;
+  // }
+  // & li.select {
+  //   display: block;
+  // }
+  // & li.select i {
+  //   position: absolute;
+  //   right: 0;
+  //   padding-right: .4rem;
+  // }
+  // & li>img {
+  //   width: 16px;
+  //   vertical-align: middle;
+  // }
+}
+
+// NAV PORTFOLIO
 .nav-portfolio-icons {
-  display: flex;
   justify-content: space-around;
   margin-top: 1.5rem;
   & span {
@@ -82,11 +131,9 @@ header {
 }
 
 // MAIN
-
 main.app {
   // border: 1px solid;
 }
-
 // HOME
 .section-crypto-currencies {
   display: block;
@@ -120,61 +167,13 @@ main.app {
 // DEPOSIT
 .section-deposit {
   width: 100%;
-  height: 100vh;
   display: none;
   // border: 1px solid;
-  & .nav-deposit {
-    width: 100%;
-    position: absolute;
-    // border: 1px solid;
-    justify-content: space-between;
-    padding: 1.5rem 1.2rem;
-  }
-  & .icon-back-page i {
-    font-size: 1.2rem;
-  }
-  & .select-currency {
-    list-style: none;
-    border: 1px solid #1b2f56;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    border-radius: .5rem;
-    width: 110px;
-    overflow: hidden;
-    position: relative;
-  }
-  & li {
-    text-align: start;
-    padding: .4rem;
-    text-transform: uppercase;
-    font-weight: 700;
-  }
-  & li:nth-child(2) {
-    border-top-style: solid;
-    border-bottom-style: solid;
-    border-color: #ffffff6d;
-    border-width: 1px;
-  }
-  & li:not(.select) {
-    background-color: #1b2f56;
-    display: none;
-  }
-  & li.select {
-    display: block;
-  }
-  & li.select i {
-    position: absolute;
-    right: 0;
-    padding-right: .4rem;
-  }
-  & li>img {
-    width: 16px;
-    vertical-align: middle;
-  }
   main {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-block-start: 5rem;
+    margin-block-start: 1rem;
   }
   & img.flag-currency {
     width: 120px;
@@ -253,6 +252,7 @@ main.app {
     font-weight: 700;
   }
 }
+
 @keyframes fade-out {
   100% {
     transform: translateY(0%);

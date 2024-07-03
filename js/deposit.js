@@ -9,7 +9,12 @@ let values = "";
 export function displayDeposit() {
   // show deposit and hidden header and all section
   document.querySelectorAll('.app section').forEach(section => section.style.display = 'none');
-  document.querySelector(".header").style.display = "none";
+  // change icon from menu to back arrow
+  document.querySelector(".icon-nav-menu").style.display = "none";
+  document.querySelector(".icon-nav-back-home").style.display = "block";
+  // hidden nav-portfolio and section balance
+  document.querySelector(".nav-portfolio-icons").style.display = "none";
+  document.querySelector(".section-balance").style.display = "none";
   sectionDeposit.style.display = "grid";
   // show total balance
   const currentBalance = wallet[currentCurrency].movements.reduce((acc,mov) => acc+=mov,0);
@@ -17,8 +22,13 @@ export function displayDeposit() {
 }
 
 export function backToHome() {
+  // change icon from back arrow to menu
+  document.querySelector(".icon-nav-menu").style.display = "block";
+  document.querySelector(".icon-nav-back-home").style.display = "none";
   sectionDeposit.style.display = "none";
-  document.querySelector(".header").style.display = "block";
+  // hidden nav-portfolio and section balance
+  document.querySelector(".nav-portfolio-icons").style.display = "flex";
+  document.querySelector(".section-balance").style.display = "block";
   document.querySelector(".section-crypto-currencies").style.display = "block";
   values = "";
   labelCurrentPrice.textContent = "0,00";
@@ -43,20 +53,18 @@ document.querySelectorAll(".key").forEach((keys) => {
     }
     if (value !== "backspace" && !values.endsWith(",")) {
       values += value;
-      labelCurrentPrice.textContent = convertCurrency(
-        Number(values)
-      );
+      labelCurrentPrice.textContent = convertCurrency(Number(values));
     }
   })
 });
 
   // Select currency
-document.querySelector(".select-currency").addEventListener("click", () => {
-  document.querySelectorAll(".select-currency li:not(.select)").forEach(li => {
-    if ((li.style.display === "block")) li.style.display = "none";
-    else li.style.display = "block";
-  });
-});
+// document.querySelector(".select-currency").addEventListener("click", () => {
+//   document.querySelectorAll(".select-currency li:not(.select)").forEach(li => {
+//     if ((li.style.display === "block")) li.style.display = "none";
+//     else li.style.display = "block";
+//   });
+// });
 
   // Deposit cash to wallet
 document.querySelector(".btn-deposit-wallet").addEventListener("click", () => {

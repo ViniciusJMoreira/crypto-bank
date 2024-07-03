@@ -9,6 +9,17 @@
 </head>
 <body>
   <header class="header">
+    <nav class="flex nav-header">
+      <div class="icon-nav icon-nav-menu">
+        <i class="bi bi-list"></i>
+      </div>
+      <div class="icon-nav icon-nav-back-home">
+        <i class="bi bi-chevron-left"></i>
+      </div>
+      <div class="icon-nav icon-nav-notification">
+        <i class="bi bi-bell-fill"></i>
+      </div>
+    </nav>
     <section class="section-balance">
       <p class="text-balance">Total Balance <i class="bi bi-eye"></i></p>
       <p class="balance">
@@ -22,7 +33,7 @@
         <span class="summary-value-out decrease">0,00</span>
       </p>
     </section>
-    <nav class="nav-portfolio-icons">
+    <nav class="flex nav-portfolio-icons">
       <div>
         <button class="btn btn-home"><i class="bi bi-house grid" data-target="section-crypto-currencies"></i></button><span class="noselect">Home</span>
       </div>
@@ -43,26 +54,6 @@
     <section class="section-crypto-finance">
     </section>
     <section class="section-deposit noselect">
-      <nav class="flex nav-deposit">
-        <div class="icon-back-page">
-          <i class="bi bi-chevron-left"></i>
-        </div>
-        <menu class="select-currency">
-          <li class="currency select">
-            <img src="media/europe-flag.png" alt="">
-            EUR
-            <i class="bi bi-caret-down-fill text-end"></i>
-          </li>
-          <li class="currency">
-            <img src="media/usa-flag.png" alt="">
-            USD
-          </li>
-          <li class="currency">
-            <img src="media/gbp-flag.png" alt="">
-            GBP
-          </li>
-        </menu>
-      </nav>
       <main class="flex">
         <img src="./media/europe.png" class="flag-currency" alt="">
         <div class="output-price">
