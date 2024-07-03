@@ -93,19 +93,19 @@ async function displayCryptoCurrencies() {
   Object.entries(currentCryptoData).forEach((coin,i) => {
     const type = coin[1].percentage > 0 ? "increase" : "decrease";
     const html = `
-        <div class="container-crypto-currencies">
-          <div class="flex">
-            <img class="crypto-image" src="https://www.cryptocompare.com/${allCryptoNames[i][1]}" alt="">
-            <div>
-              <p class="crypto-name">${allCryptoNames[i][0]}</p>
-              <p class="crypto-ticker">${coin[0]}</p>
-            </div>
-          </div>
+      <div data-crypto-ticker="${coin[0]}" class="container-crypto-currencies">
+        <div class="flex">
+          <img class="crypto-image" src="https://www.cryptocompare.com/${allCryptoNames[i][1]}" alt="">
           <div>
-            <p class="crypto-price crypto-price-${coin[0].toLowerCase()}">${convertCurrencyStyle(coin[1].price)}</p>
-            <p class="crypto-percentage crypto-percentage-${coin[0].toLowerCase()} ${type} text-end">${coin[1].percentage}%</p>
+            <p class="crypto-name">${allCryptoNames[i][0]}</p>
+            <p class="crypto-ticker">${coin[0]}</p>
           </div>
         </div>
+        <div>
+          <p class="crypto-price crypto-price-${coin[0].toLowerCase()}">${convertCurrencyStyle(coin[1].price)}</p>
+          <p class="crypto-percentage crypto-percentage-${coin[0].toLowerCase()} ${type} text-end">${coin[1].percentage}%</p>
+        </div>
+      </div>
     `;
     sectionCryptoCurrencies.insertAdjacentHTML("afterbegin", html);
   });

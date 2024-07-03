@@ -25,6 +25,20 @@ function calcDisplaySummary() {
   labelSumOut.textContent = convertCurrency(outcomes);
 }
 
+function backToHome() {
+  // change icon from back arrow to menu
+  document.querySelector(".icon-nav-menu").style.display = "block";
+  document.querySelector(".icon-nav-back-home").style.display = "none";
+  // hidden section deposit and crypto fincance
+  document.querySelector(".section-deposit").style.display = "none";
+  document.querySelector(".section-crypto-finance").style.display = "none";
+  // hidden nav-portfolio and section balance
+  document.querySelector(".nav-portfolio-icons").style.display = "flex";
+  document.querySelector(".section-balance").style.display = "block";
+  // show section crypto currencies
+  document.querySelector(".section-crypto-currencies").style.display = "block";
+}
+
 displayBalance();
 calcDisplaySummary();
-export { displayBalance, calcDisplaySummary };
+export { displayBalance, calcDisplaySummary, backToHome };

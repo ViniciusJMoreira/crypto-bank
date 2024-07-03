@@ -165,7 +165,7 @@ main.app {
 }
 
 // DEPOSIT
-.section-deposit {
+:where(.section-deposit, .section-crypto-finance) {
   width: 100%;
   display: none;
   // border: 1px solid;

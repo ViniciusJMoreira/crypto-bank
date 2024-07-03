@@ -2,7 +2,7 @@ import { convertCurrency } from "./convertCurrency.js";
 import { currentCurrency } from "./currentCurrency.js";
 import { wallet } from "./wallet.js";
 const sectionDeposit = document.querySelector(".section-deposit");
-const labelCurrentPrice = document.querySelector(".current-price");
+const labelCurrentPrice = document.querySelector(".section-deposit .current-price");
 const labelCurrentBalance = document.querySelector(".deposit-current-balance");
 let values = "";
 
@@ -21,23 +21,15 @@ export function displayDeposit() {
   labelCurrentBalance.innerHTML = `&#8776; ${convertCurrency(currentBalance)}`;
 }
 
-export function backToHome() {
-  // change icon from back arrow to menu
-  document.querySelector(".icon-nav-menu").style.display = "block";
-  document.querySelector(".icon-nav-back-home").style.display = "none";
-  sectionDeposit.style.display = "none";
-  // hidden nav-portfolio and section balance
-  document.querySelector(".nav-portfolio-icons").style.display = "flex";
-  document.querySelector(".section-balance").style.display = "block";
-  document.querySelector(".section-crypto-currencies").style.display = "block";
+export function resetValues() {
   values = "";
   labelCurrentPrice.textContent = "0,00";
 }
 
-  // Display target value
-document.querySelectorAll(".key").forEach((keys) => {
+  // Display target key value
+document.querySelectorAll(".section-deposit .key").forEach((keys) => {
   keys.addEventListener("click", (event) => {
-  const value = event.target.dataset.key;
+    const value = event.target.dataset.key;
     if (value === "backspace" && values.length > 0) {
       if (values.charAt(values.length - 2) === ".") {
         const result = values.slice(0, -2);

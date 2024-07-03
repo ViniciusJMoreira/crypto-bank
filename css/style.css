@@ -114,20 +114,20 @@ header .summary-value {
   margin-right: 0.25rem;
 }
 
-.section-deposit {
+:where(.section-deposit, .section-crypto-finance) {
   width: 100%;
   display: none;
 }
-.section-deposit main {
+:where(.section-deposit, .section-crypto-finance) main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
   margin-block-start: 1rem;
 }
-.section-deposit img.flag-currency {
+:where(.section-deposit, .section-crypto-finance) img.flag-currency {
   width: 120px;
 }
-.section-deposit .output-price {
+:where(.section-deposit, .section-crypto-finance) .output-price {
   margin-block: 1.5rem;
   display: grid;
   grid-template-columns: repeat(2, auto);
@@ -138,17 +138,17 @@ header .summary-value {
   font-size: 1.5rem;
   color: #c9c9c9;
 }
-.section-deposit .current-price {
+:where(.section-deposit, .section-crypto-finance) .current-price {
   font-size: 2rem;
   line-height: 2.2rem;
   color: #fff;
 }
-.section-deposit .deposit-current-balance {
+:where(.section-deposit, .section-crypto-finance) .deposit-current-balance {
   grid-column-start: 1;
   grid-column-end: 4;
   font-size: 0.8rem;
 }
-.section-deposit .keyboard {
+:where(.section-deposit, .section-crypto-finance) .keyboard {
   display: grid;
   width: 300px;
   grid-template-columns: repeat(3, 1fr);
@@ -156,10 +156,10 @@ header .summary-value {
   gap: 1.5rem;
   margin-inline: auto;
 }
-.section-deposit .keyboard i {
+:where(.section-deposit, .section-crypto-finance) .keyboard i {
   font-size: 1.3rem;
 }
-.section-deposit .key {
+:where(.section-deposit, .section-crypto-finance) .key {
   border: 1px solid #0C1E42;
   border-radius: 0.7rem;
   display: grid;
@@ -169,13 +169,13 @@ header .summary-value {
   position: relative;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-.section-deposit .key:hover {
+:where(.section-deposit, .section-crypto-finance) .key:hover {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 5px;
   transform: translate(1%, 1%);
   transition: all 0.3s;
   background-color: #0C1E42;
 }
-.section-deposit .key i {
+:where(.section-deposit, .section-crypto-finance) .key i {
   position: absolute;
   width: 100%;
   border-radius: 0.7rem;
@@ -183,7 +183,7 @@ header .summary-value {
   display: grid;
   place-items: center;
 }
-.section-deposit button {
+:where(.section-deposit, .section-crypto-finance) button {
   margin-block: 1.5rem;
   width: 300px;
   color: #fff;
