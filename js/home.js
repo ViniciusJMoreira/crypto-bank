@@ -1,4 +1,5 @@
-import { convertCurrency, convertCurrencyStyle } from "./convertCurrency.js";
+import { convertCurrency } from "./convertCurrency.js";
+import { currentCryptoData } from "./cryptoCurrencies.js";
 import { currentCurrency } from "./currentCurrency.js";
 import { wallet } from "./wallet.js";
 const labelBalance = document.querySelector(".current-balance");
@@ -6,8 +7,16 @@ const labelSumIn = document.querySelector(".summary-value-in");
 const labelSumOut = document.querySelector(".summary-value-out");
 
 function displayBalance() {
-  const totalFiatWallet = wallet[currentCurrency].movements.reduce((acc,mov) => acc += mov ,0);
-  labelBalance.textContent = convertCurrency(totalFiatWallet);
+  const totalMovements = wallet[currentCurrency].movements.reduce((acc,mov) => acc += mov ,0);
+  let totalCoin = 0;
+  Object.entries(currentCryptoData).forEach((coin) => {
+    if(wallet[currentCurrency][coin[0]]) {
+      const sumCoin = wallet[currentCurrency][coin[0]].reduce((acc,value) => acc+=value,0);
+      totalCoin += sumCoin * coin[1].price;
+    }
+  })
+  const totalWallet = totalMovements + totalCoin;
+  labelBalance.textContent = convertCurrency(totalWallet);
 }
 
 function calcDisplaySummary() {
@@ -37,6 +46,4 @@ function backToHome() {
   document.querySelector(".section-crypto-currencies").style.display = "block";
 }
 
-displayBalance();
-calcDisplaySummary();
 export { displayBalance, calcDisplaySummary, backToHome };

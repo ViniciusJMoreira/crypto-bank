@@ -8,6 +8,8 @@ import { resetCryptoValues, displayCryptoFinances } from "./cryptoFinances.js";
 ////// Home section
 // Display home section
 await displayCryptoCurrencies();
+displayBalance();
+calcDisplaySummary();
 document.querySelector(".btn-home").addEventListener("click", (event) => {
   displayBalance();
   calcDisplaySummary();

@@ -1,6 +1,7 @@
 import { currencies } from "./currencies.js";
 import { convertCurrencyStyle } from "./convertCurrency.js";
 import { currentCurrency } from "./currentCurrency.js";
+import { displayBalance } from "./home.js";
 
 let currentCryptoData = {};
 const API_KEY = "19718a9ed4d37246d63a91247ad10cebf2209c712f7d279a08b679612d895b8a";
@@ -84,6 +85,7 @@ async function updateCryptoData() {
     elPercentage.textContent = `${el[1].percentage}%`;
     currentCryptoData[el[0]].percentage = el[1].percentage;
   });
+  displayBalance();
 }
 
 async function displayCryptoCurrencies() {

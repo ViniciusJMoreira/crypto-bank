@@ -35,7 +35,6 @@ export function resetCryptoValues() {
   // Display target key value
 document.querySelectorAll(".section-crypto-finance .key").forEach((keys) => {
   keys.addEventListener("click", (event) => {
-    console.log(event.target);
     const value = event.target.dataset.key;
     if (value === "backspace" && values.length > 0) {
       if (values.charAt(values.length - 2) === ".") {
