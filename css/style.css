@@ -124,7 +124,7 @@ header .summary-value {
   justify-content: center;
   margin-block-start: 1rem;
 }
-:where(.section-deposit, .section-crypto-finance) img.flag-currency {
+:where(.section-deposit, .section-crypto-finance) img {
   width: 120px;
 }
 :where(.section-deposit, .section-crypto-finance) .output-price {
@@ -143,7 +143,7 @@ header .summary-value {
   line-height: 2.2rem;
   color: #fff;
 }
-:where(.section-deposit, .section-crypto-finance) .deposit-current-balance {
+:where(.section-deposit, .section-crypto-finance) .deposit-current-balance, :where(.section-deposit, .section-crypto-finance) .crypto-total-value {
   grid-column-start: 1;
   grid-column-end: 4;
   font-size: 0.8rem;

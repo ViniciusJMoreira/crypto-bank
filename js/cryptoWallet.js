@@ -1,4 +1,3 @@
-import { convertCurrencyStyle } from "./convertCurrency.js";
 import { currentCryptoData } from "./cryptoCurrencies.js";
 import { currentCurrency } from "./currentCurrency.js";
 import { wallet } from "./wallet.js";
@@ -9,7 +8,13 @@ async function displayCryptoWallet() {
   cryptoWallet.innerHTML = "";
   Object.entries(currentCryptoData).forEach((coin) => {
     if(wallet[currentCurrency][coin[0]]) {
+      let percentage = 0;
+      currentCryptoData[coin[0]].initPrice.forEach(price => {
+        percentage += Math.round((((currentCryptoData[coin[0]].price - price) / price) * 100) * 100) / 100;
+      });
       const totalPrice = wallet[currentCurrency][coin[0]].reduce((acc,mov)=>acc+=mov,0);
+      const amountCrypto = totalPrice / currentCryptoData[coin[0]].price;
+      const type = percentage >= 0 ? "increase" : "decrease";
       const html = `
         <hr>
         <div class="crypto-item">
@@ -21,14 +26,18 @@ async function displayCryptoWallet() {
               <p class="crypto-ticker">${coin[0]}</p>
             </div>
           </div>
+          <div>
             <p class="crypto-price crypto-price-${coin[0].toLowerCase()}">
-              ${convertCurrencyStyle(totalPrice)}
+              ${amountCrypto.toFixed(6)}
             </p>
+            <p class="crypto-percentage ${type} text-end">${percentage}%</p>
+          </div>
         </div>
       `;
       cryptoWallet.insertAdjacentHTML("afterbegin", html);
     }
   });
+  setInterval(displayCryptoWallet, 1000 * 10);
 }
 
 function toggleCryptoWallet() {

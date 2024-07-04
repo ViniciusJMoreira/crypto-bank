@@ -21,7 +21,7 @@ export function displayDeposit() {
   labelCurrentBalance.innerHTML = `&#8776; ${convertCurrency(currentBalance)}`;
 }
 
-export function resetValues() {
+export function resetDepositValues() {
   values = "";
   labelCurrentPrice.textContent = "0,00";
 }

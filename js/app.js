@@ -2,8 +2,8 @@ import { displayBalance, calcDisplaySummary, backToHome } from "./home.js";
 import { displayCryptoCurrencies } from "./cryptoCurrencies.js";
 import { displayFiatWalletTotal } from "./fiatWallet.js";
 import { displayCryptoWallet, toggleCryptoWallet } from "./cryptoWallet.js";
-import { resetValues, displayDeposit } from "./deposit.js";
-import { displayCryptoFinances } from "./cryptoFinances.js";
+import { resetDepositValues, displayDeposit } from "./deposit.js";
+import { resetCryptoValues, displayCryptoFinances } from "./cryptoFinances.js";
 
 ////// Home section
 // Display home section
@@ -20,7 +20,8 @@ document.querySelector('.btn-deposit').addEventListener("click", displayDeposit)
 //Back to home
 document.querySelector(".icon-nav-back-home").addEventListener("click", () => {
   backToHome();
-  resetValues();
+  resetDepositValues();
+  resetCryptoValues();
   displayBalance();
   calcDisplaySummary();
 });

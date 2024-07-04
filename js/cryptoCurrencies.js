@@ -34,7 +34,7 @@ async function dataCryptoCurrencies() {
     const price = coin[1][currencies[currentCurrency].currency].PRICE;
     const open24Hour = coin[1][currencies[currentCurrency].currency].OPEN24HOUR;
     const percentage = Math.round((((price - open24Hour) / open24Hour) * 100) * 100) / 100;
-    acc[coin[0]] = { price, percentage };
+    acc[coin[0]] = { price, percentage, initPrice : [] };
     return acc;
   },{});
   // console.log(dataCrypto);
@@ -95,15 +95,15 @@ async function displayCryptoCurrencies() {
     const html = `
       <div data-crypto-ticker="${coin[0]}" class="container-crypto-currencies">
         <div class="flex">
-          <img class="crypto-image" src="https://www.cryptocompare.com/${allCryptoNames[i][1]}" alt="">
+          <img data-crypto-ticker="${coin[0]}" class="crypto-image" src="https://www.cryptocompare.com/${allCryptoNames[i][1]}" alt="">
           <div>
-            <p class="crypto-name">${allCryptoNames[i][0]}</p>
-            <p class="crypto-ticker">${coin[0]}</p>
+            <p data-crypto-ticker="${coin[0]}" class="crypto-name">${allCryptoNames[i][0]}</p>
+            <p data-crypto-ticker="${coin[0]}" class="crypto-ticker">${coin[0]}</p>
           </div>
         </div>
         <div>
-          <p class="crypto-price crypto-price-${coin[0].toLowerCase()}">${convertCurrencyStyle(coin[1].price)}</p>
-          <p class="crypto-percentage crypto-percentage-${coin[0].toLowerCase()} ${type} text-end">${coin[1].percentage}%</p>
+          <p data-crypto-ticker="${coin[0]}" class="crypto-price crypto-price-${coin[0].toLowerCase()}">${convertCurrencyStyle(coin[1].price)}</p>
+          <p data-crypto-ticker="${coin[0]}" class="crypto-percentage crypto-percentage-${coin[0].toLowerCase()} ${type} text-end">${coin[1].percentage}%</p>
         </div>
       </div>
     `;
