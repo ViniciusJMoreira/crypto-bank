@@ -12,8 +12,7 @@ async function displayCryptoWallet() {
       currentCryptoData[coin[0]].initPrice.forEach(price => {
         percentage += Math.round((((currentCryptoData[coin[0]].price - price) / price) * 100) * 100) / 100;
       });
-      const totalPrice = wallet[currentCurrency][coin[0]].reduce((acc,mov)=>acc+=mov,0);
-      const amountCrypto = totalPrice / currentCryptoData[coin[0]].price;
+      const amountCrypto = wallet[currentCurrency][coin[0]].reduce((acc,mov)=>acc+=mov,0);
       const type = percentage >= 0 ? "increase" : "decrease";
       const html = `
         <hr>
@@ -37,7 +36,6 @@ async function displayCryptoWallet() {
       cryptoWallet.insertAdjacentHTML("afterbegin", html);
     }
   });
-  setInterval(displayCryptoWallet, 1000 * 10);
 }
 
 function toggleCryptoWallet() {

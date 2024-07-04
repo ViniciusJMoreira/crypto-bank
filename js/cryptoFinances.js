@@ -64,13 +64,14 @@ document.querySelectorAll(".section-crypto-finance .key").forEach((keys) => {
 document.querySelector(".btn-crypto-finance").addEventListener("click", () => {
   const currentBalance = wallet[currentCurrency].movements.reduce((acc,mov) => acc+=mov,0);
   if(currentBalance >= Number(values)) {
+    let amountCrypto = values / currentCryptoData[cryptoName].price;
     wallet[currentCurrency][cryptoName] ?
-      wallet[currentCurrency][cryptoName].push(Number(values)) :
-      wallet[currentCurrency][cryptoName] = [Number(values)];
+      wallet[currentCurrency][cryptoName].push(Number(amountCrypto)) :
+      wallet[currentCurrency][cryptoName] = [Number(amountCrypto)];
     wallet[currentCurrency].movements.push(- Number(values));
     currentCryptoData[cryptoName].initPrice.push(currentCryptoData[cryptoName].price);
     values = "";
-    const amountCrypto = 0 / currentCryptoData[cryptoName].price;
+    amountCrypto = 0 / currentCryptoData[cryptoName].price;
     labelCurrentBalance.innerHTML = `&#8776; ${cryptoName} ${amountCrypto.toFixed(9)}`;
     labelCurrentPrice.textContent = "0,00";
   }

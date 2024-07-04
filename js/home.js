@@ -6,10 +6,8 @@ const labelSumIn = document.querySelector(".summary-value-in");
 const labelSumOut = document.querySelector(".summary-value-out");
 
 function displayBalance() {
-  const currentBalance = Object.entries(wallet[currentCurrency])
-  .flatMap(mov => mov[1])
-  .reduce((acc, mov) => (acc += mov),0);
-  labelBalance.textContent = convertCurrency(currentBalance);
+  const totalFiatWallet = wallet[currentCurrency].movements.reduce((acc,mov) => acc += mov ,0);
+  labelBalance.textContent = convertCurrency(totalFiatWallet);
 }
 
 function calcDisplaySummary() {
